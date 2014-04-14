@@ -1,0 +1,19 @@
+{
+    "name": "mysqlserver",
+    "default_attributes": { },
+    "override_attributes": { },
+    "json_class": "Chef::Role",
+    "description": "MySql Server Hardening Test Role",
+    "chef_type": "role",
+    "default_attributes" : {
+      "mysql": {
+        "server_root_password": "iloverandompasswordsbutthiswilldo",
+        "server_repl_password": "iloverandompasswordsbutthiswilldo",
+        "server_debian_password": "iloverandompasswordsbutthiswilldo"
+      }
+    },
+    "run_list": [
+        "recipe[chef-solo-search]",
+        "recipe[mysql::server]"
+    ]
+}
