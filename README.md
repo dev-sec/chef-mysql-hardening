@@ -12,6 +12,8 @@ Note: This is currently work in progress and not tested on all supported platfor
 
 ## Usage
 
+This cookbook is optimized to work with [os-hardening](https://github.com/TelekomLabs/chef-os-hardening) and [ssh-hardening](https://github.com/TelekomLabs/chef-ssh-hardening). It will play well without, but you need to ensure all preconditions like `apt-get update` or `yum update` are met.
+
 tbd.
 
 ## Security Options
