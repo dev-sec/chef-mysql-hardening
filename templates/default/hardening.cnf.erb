@@ -25,3 +25,15 @@ local-infile = <%= node['mysql']['security']['local_infile'] %>
 <% if node['mysql']['security']['skip_show_database'] -%>
 skip-show-database
 <% end %>
+
+<% if node['mysql']['security']['allow-suspicious-udfs'] -%>
+allow-suspicious-udfs = <%= node['mysql']['security']['allow-suspicious-udfs'] %>
+<% end %>
+
+<% if node['mysql']['security']['automatic_sp_privileges'] -%>
+automatic_sp_privileges = <%= node['mysql']['security']['automatic_sp_privileges'] %>
+<% end %>
+
+<% if node['mysql']['security']['secure-file-priv'] -%>
+secure-file-priv = <%= node['mysql']['security']['secure-file-priv'] %>
+<% end %>

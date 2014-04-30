@@ -27,6 +27,9 @@ Further information is already available at [Deutsche Telekom (German)](http://w
     options.html#option_mysqld_symbolic-links)
  * default['mysql']['security']['skip_show_database'] - [skip-show-database](http://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_skip-show-database)
  * default['mysql']['security']['local_infile'] - [local-infile](http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_local_infile)
+ * default['mysql']['security']['allow-suspicious-udfs'] - [allow-suspicious-udfs](https://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_allow-suspicious-udfs)
+ * default['mysql']['security']['automatic_sp_privileges'] - [automatic_sp_privileges](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_automatic_sp_privileges)
+ * default['mysql']['security']['secure-file-priv'] - [secure-file-priv](https://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_secure-file-priv)
 
 ## Security Configuration
 
@@ -38,23 +41,30 @@ This setup sets the following parameters by default
 
     # via ['mysql']['security']['local_infile']
     local-infile = 0
+
     # via ['mysql']['security']['safe_user_create']
     safe-user-create = 1
+
     # via ['mysql']['security']['secure_auth']
     secure-auth = 1
+
     # via ['mysql']['security']['skip_show_database']
     skip-show-database
+
     # via ['mysql']['security']['skip_symbolic_links']
     skip-symbolic-links
 
+    # via ['mysql']['security']['automatic_sp_privileges']
     automatic_sp_privileges = 0
+
+    # via ['mysql']['security']['secure-file-priv']
     secure-file-priv = /tmp
 
 
 Additionally it ensures that the following parameters are not set
 
- * old-passwords via `['mysql']['security']['secure_auth']`
- * allow-suspicious-udfs
+ * deactivate old-passwords via `['mysql']['security']['secure_auth']`
+ * deactivate allow-suspicious-udfs via `node['mysql']['security']['allow-suspicious-udfs']`
  * skip-grant-tables
  * chroot (instead we prefer AppArmor for Ubuntu)
 
