@@ -30,7 +30,7 @@ template '/etc/mysql/conf.d/hardening.cnf' do
 end
 
 # ensure permissions
-directory "#{node['mysql']['data_dir']}" do
+directory node['mysql']['data_dir']} do
   mode "755"
   owner "mysql"
   action :create
