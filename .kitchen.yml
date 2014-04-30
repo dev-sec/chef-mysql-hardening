@@ -16,6 +16,7 @@ platforms:
   driver_config:
     box: opscode-centos-6.4
     box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
+    
 - name: centos-6.5
   driver_config:
      box: opscode-centos-6.5
@@ -39,4 +40,4 @@ platforms:
 suites:
 - name: default
   run_list:
-    - role[mysqlserver]
+    - role[mysql]

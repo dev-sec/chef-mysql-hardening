@@ -1,9 +1,9 @@
 {
-    "name": "mysqlserver",
+    "name": "mysql-hardened",
     "default_attributes": { },
     "override_attributes": { },
     "json_class": "Chef::Role",
-    "description": "MySql Server Hardening Test Role",
+    "description": "MySql Hardened Server Test Role",
     "chef_type": "role",
     "default_attributes" : {
       "mysql": {
@@ -14,6 +14,6 @@
     },
     "run_list": [
         "recipe[chef-solo-search]",
-        "recipe[mysql::server]"
+        "recipe[mysql-hardening::server]"
     ]
 }
