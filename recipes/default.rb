@@ -17,4 +17,4 @@
 # limitations under the License.
 #
 
-include_recipe("mysql-hardening::server")
+include_recipe('mysql-hardening::server')

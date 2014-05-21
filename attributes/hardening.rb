@@ -29,4 +29,4 @@ default['mysql']['security']['allow-suspicious-udfs']   = 0
 default['mysql']['security']['automatic_sp_privileges']   = 0
 
 # @see https://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_secure-file-priv
-default['mysql']['security']['secure-file-priv']        = "/tmp"
+default['mysql']['security']['secure-file-priv']        = '/tmp'
