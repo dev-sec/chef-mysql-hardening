@@ -1,4 +1,4 @@
-include_attribute "mysql"
+include_attribute 'mysql'
 
 # ensure the following parameters are set properly
 default['mysql']['allow_remote_root'] = false
