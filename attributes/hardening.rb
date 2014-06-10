@@ -1,3 +1,4 @@
+# encoding: utf-8
 # security options
 
 # @see http://www.symantec.com/connect/articles/securing-mysql-step-step

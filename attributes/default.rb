@@ -1,3 +1,4 @@
+# encoding: utf-8
 include_attribute 'mysql'
 
 # ensure the following parameters are set properly
