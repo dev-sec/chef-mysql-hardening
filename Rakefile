@@ -46,7 +46,7 @@ end
 # Rubocop
 desc 'Run Rubocop lint checks'
 task :rubocop do
-  Rubocop::RakeTask.new
+  RuboCop::RakeTask.new
 end
 
 begin
