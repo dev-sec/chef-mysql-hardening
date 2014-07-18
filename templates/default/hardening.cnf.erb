@@ -1,39 +1,9 @@
-<% if node['mysql']['security']['chroot'] -%>
-chroot = <%= node['mysql']['security']['chroot'] %>
-<% end %>
+[mysqld]
 
-<% if node['mysql']['security']['safe_user_create'] -%>
-safe-user-create = <%= node['mysql']['security']['safe_user_create'] %>
-<% end %>
-
-<% if node['mysql']['security']['secure_auth'] -%>
-secure-auth = <%= node['mysql']['security']['secure_auth'] %>
-<% end %>
-
-<% if node['mysql']['security']['skip_symbolic_links'] -%>
-skip-symbolic-links = <%= node['mysql']['security']['skip_symbolic_links'] %>
-<% end %>
-
-<% if node['mysql']['security']['secure_file_priv'] -%>
-secure-file-priv = <%= node['mysql']['security']['secure_file_priv'] %>
-<% end %>
-
-<% if node['mysql']['security']['local_infile'] -%>
-local-infile = <%= node['mysql']['security']['local_infile'] %>
-<% end %>
-
-<% if node['mysql']['security']['skip_show_database'] -%>
-skip-show-database
-<% end %>
-
-<% if node['mysql']['security']['allow-suspicious-udfs'] -%>
-allow-suspicious-udfs = <%= node['mysql']['security']['allow-suspicious-udfs'] %>
-<% end %>
-
-<% if node['mysql']['security']['automatic_sp_privileges'] -%>
-automatic_sp_privileges = <%= node['mysql']['security']['automatic_sp_privileges'] %>
-<% end %>
-
-<% if node['mysql']['security']['secure-file-priv'] -%>
-secure-file-priv = <%= node['mysql']['security']['secure-file-priv'] %>
+<% node['mysql']['security'].each do |sec_setting, value| -%>
+  <% if value && (!!value == value) # We do have a value and it is a boolean -%>
+<%= sec_setting if value %>
+  <% else -%>
+<%= "#{sec_setting} = #{value}" if value  %>
+  <% end %>
 <% end %>
