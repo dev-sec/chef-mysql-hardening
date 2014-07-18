@@ -24,7 +24,7 @@ include_recipe 'mysql::server'
 # apply hardening configuration
 template '/etc/mysql/conf.d/hardening.cnf' do
   owner 'mysql'
-  owner 'mysql'
+  mode '750'
   source 'hardening.cnf.erb'
   notifies :restart, "mysql_service[#{node['mysql']['service_name']}]"
 end
