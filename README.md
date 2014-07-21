@@ -81,7 +81,16 @@ Furthermore the permission of `/var/lib/mysql` is limited to `mysql` user.
     # for development
     kitchen create default-ubuntu-1204
     kitchen converge default-ubuntu-1204
+    
+## Tested Operating Systems
 
+* Ubuntu 12.04
+* Ubuntu 14.04
+* CentOS 6.4
+* CentOS 6.5
+* Oracle 6.4
+* Oracle 6.5
+* Debain 7
 
 ## Contributors + Kudos
 
