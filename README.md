@@ -2,7 +2,11 @@
 
 ## Description
 
-Provides security configurations for mysql.
+Provides security configurations for mysql. It is intended to set up production-ready mysql instances that are configured with minimal surface for attackers.
+
+This cookbook focus security configuration of mysql and reuses the [mysql cookbook](https://github.com/opscode-cookbooks/mysql) for the installation. 
+
+We optimized this cookbook to work with [os-hardening](https://github.com/TelekomLabs/chef-os-hardening) and [ssh-hardening](https://github.com/TelekomLabs/chef-ssh-hardening) without a hassle. It will play well without, but you need to ensure all preconditions like `apt-get update` or `yum update` are met.
 
 ## Requirements
 
@@ -10,9 +14,29 @@ Provides security configurations for mysql.
 
 ## Usage
 
-This cookbook is optimized to work with [os-hardening](https://github.com/TelekomLabs/chef-os-hardening) and [ssh-hardening](https://github.com/TelekomLabs/chef-ssh-hardening). It will play well without, but you need to ensure all preconditions like `apt-get update` or `yum update` are met.
+A sample role may look like:
 
-tbd.
+```json
+{
+    "name": "mysql",
+    "default_attributes": { },
+    "override_attributes": { },
+    "json_class": "Chef::Role",
+    "description": "MySql Hardened Server Test Role",
+    "chef_type": "role",
+    "default_attributes" : {
+      "mysql": {
+        "server_root_password": "iloverandompasswordsbutthiswilldo",
+        "server_debian_password": "iloverandompasswordsbutthiswilldo"
+      }
+    },
+    "run_list": [
+        "recipe[chef-solo-search]",
+        "recipe[apt]",
+        "recipe[mysql-hardening::server]"
+    ]
+}
+```
 
 ## Security Options
 
@@ -107,6 +131,7 @@ kitchen converge default-ubuntu-1204
 * Dominik Richter
 * Christoph Hartmann
 * Patrick Meier
+* Edmund Haselwanter
 
 ## License and Author
 
