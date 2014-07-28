@@ -4,8 +4,6 @@
 
 Provides security configurations for mysql.
 
-Note: This is currently work in progress and not tested on all supported platforms
-
 ## Requirements
 
 * Opscode chef
@@ -72,15 +70,27 @@ Furthermore the permission of `/var/lib/mysql` is limited to `mysql` user.
 
 ## Tests
 
-    # fast test on one machine
-    kitchen test default-ubuntu-1204
+```bash
+# Install dependencies
+gem install bundler
+bundle install
 
-    # test on all machines
-    kitchen test
+# Do lint checks
+bundle exec rake lint
 
-    # for development
-    kitchen create default-ubuntu-1204
-    kitchen converge default-ubuntu-1204
+# Fetch tests
+thor kitchen:fetch-remote-tests
+
+# fast test on one machine
+kitchen test default-ubuntu-1204
+
+# test on all machines
+kitchen test
+
+# for development
+kitchen create default-ubuntu-1204
+kitchen converge default-ubuntu-1204
+```
     
 ## Tested Operating Systems
 
