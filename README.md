@@ -2,9 +2,11 @@
 
 ## Description
 
-Provides security configurations for mysql.
+Provides security configurations for mysql. It is intended to set up production-ready mysql instances that are configured with minimal surface for attackers.
 
-Note: This is currently work in progress and not tested on all supported platforms
+This cookbook focus security configuration of mysql and reuses the [mysql cookbook](https://github.com/opscode-cookbooks/mysql) for the installation. Therefore you can add this hardening layer on top of your existing mysql configuration in Chef.
+
+We optimized this cookbook to work with [os-hardening](https://github.com/TelekomLabs/chef-os-hardening) and [ssh-hardening](https://github.com/TelekomLabs/chef-ssh-hardening) without a hassle. It will play well without, but you need to ensure all preconditions like `apt-get update` or `yum update` are met.
 
 ## Requirements
 
@@ -12,9 +14,29 @@ Note: This is currently work in progress and not tested on all supported platfor
 
 ## Usage
 
-This cookbook is optimized to work with [os-hardening](https://github.com/TelekomLabs/chef-os-hardening) and [ssh-hardening](https://github.com/TelekomLabs/chef-ssh-hardening). It will play well without, but you need to ensure all preconditions like `apt-get update` or `yum update` are met.
+A sample role may look like:
 
-tbd.
+```json
+{
+    "name": "mysql",
+    "default_attributes": { },
+    "override_attributes": { },
+    "json_class": "Chef::Role",
+    "description": "MySql Hardened Server Test Role",
+    "chef_type": "role",
+    "default_attributes" : {
+      "mysql": {
+        "server_root_password": "iloverandompasswordsbutthiswilldo",
+        "server_debian_password": "iloverandompasswordsbutthiswilldo"
+      }
+    },
+    "run_list": [
+        "recipe[chef-solo-search]",
+        "recipe[apt]",
+        "recipe[mysql-hardening::server]"
+    ]
+}
+```
 
 ## Security Options
 
@@ -72,15 +94,27 @@ Furthermore the permission of `/var/lib/mysql` is limited to `mysql` user.
 
 ## Tests
 
-    # fast test on one machine
-    kitchen test default-ubuntu-1204
+```bash
+# Install dependencies
+gem install bundler
+bundle install
 
-    # test on all machines
-    kitchen test
+# Do lint checks
+bundle exec rake lint
 
-    # for development
-    kitchen create default-ubuntu-1204
-    kitchen converge default-ubuntu-1204
+# Fetch tests
+bundle exec thor kitchen:fetch-remote-tests
+
+# fast test on one machine
+bundle exec kitchen test default-ubuntu-1204
+
+# test on all machines
+bundle exec kitchen test
+
+# for development
+bundle exec kitchen create default-ubuntu-1204
+bundle exec kitchen converge default-ubuntu-1204
+```
     
 ## Tested Operating Systems
 
@@ -97,6 +131,7 @@ Furthermore the permission of `/var/lib/mysql` is limited to `mysql` user.
 * Dominik Richter
 * Christoph Hartmann
 * Patrick Meier
+* Edmund Haselwanter
 
 ## License and Author
 
