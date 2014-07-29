@@ -4,7 +4,7 @@
 
 Provides security configurations for mysql. It is intended to set up production-ready mysql instances that are configured with minimal surface for attackers.
 
-This cookbook focus security configuration of mysql and reuses the [mysql cookbook](https://github.com/opscode-cookbooks/mysql) for the installation. 
+This cookbook focus security configuration of mysql and reuses the [mysql cookbook](https://github.com/opscode-cookbooks/mysql) for the installation. Therefore you can add this hardening layer on top of your existing mysql configuration in Chef.
 
 We optimized this cookbook to work with [os-hardening](https://github.com/TelekomLabs/chef-os-hardening) and [ssh-hardening](https://github.com/TelekomLabs/chef-ssh-hardening) without a hassle. It will play well without, but you need to ensure all preconditions like `apt-get update` or `yum update` are met.
 
@@ -103,17 +103,17 @@ bundle install
 bundle exec rake lint
 
 # Fetch tests
-thor kitchen:fetch-remote-tests
+bundle exec thor kitchen:fetch-remote-tests
 
 # fast test on one machine
-kitchen test default-ubuntu-1204
+bundle exec kitchen test default-ubuntu-1204
 
 # test on all machines
-kitchen test
+bundle exec kitchen test
 
 # for development
-kitchen create default-ubuntu-1204
-kitchen converge default-ubuntu-1204
+bundle exec kitchen create default-ubuntu-1204
+bundle exec kitchen converge default-ubuntu-1204
 ```
     
 ## Tested Operating Systems
