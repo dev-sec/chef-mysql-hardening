@@ -23,4 +23,3 @@ include_recipe 'mysql::server'
 
 # applies the hardening
 include_recipe 'mysql-hardening::hardening'
-
