@@ -19,8 +19,8 @@
 #
 
 # apply hardening configuration
-template '/etc/mysql/conf.d/hardening.cnf' do
-  owner 'mysql'
+template node['mysql-hardening']['conf-file'] do
+  owner node['mysql-hardening']['user']
   mode '750'
   source 'hardening.cnf.erb'
   notifies :restart, "mysql_service[#{node['mysql']['service_name']}]"
@@ -29,6 +29,6 @@ end
 # ensure permissions
 directory node['mysql']['data_dir'] do
   mode '755'
-  owner 'mysql'
+  owner node['mysql-hardening']['user']
   action :create
 end
