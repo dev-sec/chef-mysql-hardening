@@ -31,9 +31,9 @@ default['mysql-hardening']['user'] = 'mysql'
 
 case platform_family
 when 'rhel', 'fedora'
-	default['mysql-hardening']['mysql-conf'] = '/etc/my.cnf'
+  default['mysql-hardening']['mysql-conf'] = '/etc/my.cnf'
 else
-	default['mysql-hardening']['mysql-conf'] = '/etc/mysql/my.cnf'
+  default['mysql-hardening']['mysql-conf'] = '/etc/mysql/my.cnf'
 end
 
 default['mysql-hardening']['hardening-conf'] = '/etc/mysql/conf.d/hardening.cnf'
