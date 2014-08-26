@@ -18,8 +18,15 @@
 # limitations under the License.
 #
 
+# protect my.cnf
+File node['mysql-hardening']['mysql-conf'] do
+  mode '600'
+  owner 'root'
+  group 'root'
+end
+
 # apply hardening configuration
-template node['mysql-hardening']['conf-file'] do
+template node['mysql-hardening']['hardening-conf'] do
   owner node['mysql-hardening']['user']
   mode '750'
   source 'hardening.cnf.erb'
