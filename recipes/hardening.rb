@@ -1,7 +1,7 @@
 # encoding: utf-8
 #
 # Cookbook Name: mysql-hardening
-# Recipe: server.rb
+# Recipe: hardening.rb
 #
 # Copyright 2014, Deutsche Telekom AG
 #
@@ -18,8 +18,17 @@
 # limitations under the License.
 #
 
-# installs the server
-include_recipe 'mysql::server'
+# apply hardening configuration
+template node['mysql-hardening']['conf-file'] do
+  owner node['mysql-hardening']['user']
+  mode '750'
+  source 'hardening.cnf.erb'
+  notifies :restart, "mysql_service[#{node['mysql']['service_name']}]"
+end
 
-# applies the hardening
-include_recipe 'mysql-hardening::hardening'
+# ensure permissions
+directory node['mysql']['data_dir'] do
+  mode '755'
+  owner node['mysql-hardening']['user']
+  action :create
+end

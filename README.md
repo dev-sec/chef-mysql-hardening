@@ -38,6 +38,21 @@ A sample role may look like:
 }
 ```
 
+## Recipes
+
+### mysql-hardening::server (default)
+
+This recipe installs the mysql server (by using the [mysql cookbook](https://github.com/opscode-cookbooks/mysql)) and applies `mysql-hardening::hardening`
+
+### mysql-hardening::hardening
+
+This recipe installs the hardening but expects an existing installation of Mysql, MariaDB or Percona. If you are not using the mysql cookbook, you may need to adapt:
+
+- `node['mysql']['service_name']` = 'default'
+- `node['mysql']['data_dir']` = '/var/lib/mysql'
+- `node['mysql-hardening']['conf-file'] = '/etc/mysql/conf.d/hardening.cnf'` 
+- `node['mysql-hardening']['user'] = 'mysql'`
+
 ## Security Options
 
 Further information is already available at [Deutsche Telekom (German)](http://www.telekom.com/static/-/155996/7/technische-sicherheitsanforderungen-si) and [Symantec](http://www.symantec.com/connect/articles/securing-mysql-step-step) 
@@ -115,7 +130,17 @@ bundle exec kitchen test
 bundle exec kitchen create default-ubuntu-1204
 bundle exec kitchen converge default-ubuntu-1204
 ```
-    
+
+This cookbook comes with a [guard](https://github.com/guard/guard) file for easy development. During development guard watches the folders and runs footcritic and robocop.
+
+```
+# list all plugins
+bundle exec guard list
+
+# run guard with foodcritic and robocop
+bundle exec guard -P Foodcritic Rubocop
+```
+
 ## Tested Operating Systems
 
 * Ubuntu 12.04

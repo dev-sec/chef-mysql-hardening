@@ -25,3 +25,7 @@ include_attribute 'mysql'
 default['mysql']['allow_remote_root'] = false
 default['mysql']['remove_anonymous_users'] = true
 default['mysql']['remove_test_database'] = true
+
+# path configuration
+default['mysql-hardening']['conf-file'] = '/etc/mysql/conf.d/hardening.cnf'
+default['mysql-hardening']['user'] = 'mysql'
