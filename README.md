@@ -130,7 +130,17 @@ bundle exec kitchen test
 bundle exec kitchen create default-ubuntu-1204
 bundle exec kitchen converge default-ubuntu-1204
 ```
-    
+
+This cookbook comes with a [guard](https://github.com/guard/guard) file for easy development. During development guard watches the folders and runs footcritic and robocop.
+
+```
+# list all plugins
+bundle exec guard list
+
+# run guard with foodcritic and robocop
+bundle exec guard -P Foodcritic Rubocop
+```
+
 ## Tested Operating Systems
 
 * Ubuntu 12.04
