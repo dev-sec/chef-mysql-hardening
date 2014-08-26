@@ -40,13 +40,18 @@ A sample role may look like:
 
 ## Recipes
 
-### mysql-hardening::server (default)
+### mysql-hardening::hardening (default)
 
-This recipe installs the mysql server (by using the [mysql cookbook](https://github.com/opscode-cookbooks/mysql)) and applies `mysql-hardening::hardening`
+This recipe is an overley recipe for the [mysql cookbook](https://github.com/opscode-cookbooks/mysql)) and applies `mysql-hardening::hardening`
 
-### mysql-hardening::hardening
+Add the following to your runlist and customize security option attributes
 
-This recipe installs the hardening but expects an existing installation of Mysql, MariaDB or Percona. If you are not using the mysql cookbook, you may need to adapt:
+```bash
+  "recipe[mysql::server]",
+  "recipe[mysql-hardening]"
+```
+
+This hardening recipe installs the hardening but expects an existing installation of Mysql, MariaDB or Percona. If you are not using the mysql cookbook, you may need to adapt the attributes:
 
 - `node['mysql']['service_name']` = 'default'
 - `node['mysql']['data_dir']` = '/var/lib/mysql'
