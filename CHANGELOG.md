@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+* improvement: rewrite as overlay module
+* feature: set permission for my.cnf
+
 ## 1.0.0
 
 * feature: work in conjunction with mysql cookbook
