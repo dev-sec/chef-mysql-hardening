@@ -33,7 +33,8 @@ A sample role may look like:
     "run_list": [
         "recipe[chef-solo-search]",
         "recipe[apt]",
-        "recipe[mysql-hardening::server]"
+        "recipe[mysql::server]",
+        "recipe[mysql-hardening]"
     ]
 }
 ```
