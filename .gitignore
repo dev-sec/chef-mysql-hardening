@@ -1,7 +1,10 @@
-exp.*
-.kitchen
-Gemfile.lock
-Berksfile.lock
-.kitchen.local.yml
+README.pdf
+README.html
 shared_test_repo/
 test/integration
+.kitchen
+coverage
+.kitchen.local.yml
+
+Gemfile.lock
+Berksfile.lock
