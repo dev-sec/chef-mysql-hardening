@@ -19,7 +19,7 @@
 #
 
 # protect my.cnf
-File node['mysql-hardening']['mysql-conf'] do
+file node['mysql-hardening']['mysql-conf'] do
   mode '600'
   owner 'root'
   group 'root'
