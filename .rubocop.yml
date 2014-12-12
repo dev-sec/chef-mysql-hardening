@@ -1,11 +1,9 @@
+---
 AllCops:
   Exclude:
-    - vendor/**/*
-    - metadata.rb
-    - '**/Puppetfile'
-    - Puppetfile
-    - test/**/*
-
+  - vendor/**/*
+  - test/**/*
+  - metadata.rb
 Documentation:
   Enabled: false
 AlignParameters:
@@ -24,3 +22,5 @@ Metrics/CyclomaticComplexity:
   Max: 10
 Metrics/PerceivedComplexity:
   Max: 10
+Metrics/AbcSize:
+  Max: 29
