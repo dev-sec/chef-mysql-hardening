@@ -160,7 +160,7 @@ bundle exec guard -P Foodcritic Rubocop
 * CentOS 6.5
 * Oracle 6.4
 * Oracle 6.5
-* Debain 7
+* Debian 7
 
 ## Contributors + Kudos
 
