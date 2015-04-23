@@ -186,7 +186,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+
 [1]: https://supermarket.getchef.com/cookbooks/mysql-hardening
-[2]: http://travis-ci.org/TelekomLabs/chef-mysql-hardening
-[3]: https://coveralls.io/r/TelekomLabs/chef-mysql-hardening
-[4]: https://gemnasium.com/TelekomLabs/chef-mysql-hardening
+[2]: http://travis-ci.org/hardening-io/chef-mysql-hardening
+[3]: https://coveralls.io/r/hardening-io/chef-mysql-hardening
+[4]: https://gemnasium.com/hardening-io/chef-mysql-hardening
+[5]: https://gitter.im/hardening-io
