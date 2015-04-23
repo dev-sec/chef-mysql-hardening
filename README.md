@@ -1,9 +1,10 @@
 # mysql-hardening (Chef cookbook)
 
 [![Supermarket](http://img.shields.io/cookbook/v/mysql-hardening.svg)][1]
-[![Build Status](http://img.shields.io/travis/TelekomLabs/chef-mysql-hardening.svg)][2]
-[![Code Coverage](http://img.shields.io/coveralls/TelekomLabs/chef-mysql-hardening.svg)][3]
-[![Dependencies](http://img.shields.io/gemnasium/TelekomLabs/chef-mysql-hardening.svg)][4]
+[![Build Status](http://img.shields.io/travis/hardening-io/chef-mysql-hardening.svg)][2]
+[![Code Coverage](http://img.shields.io/coveralls/hardening-io/chef-mysql-hardening.svg)][3]
+[![Dependencies](http://img.shields.io/gemnasium/hardening-io/chef-mysql-hardening.svg)][4]
+[![Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)][5]
 
 ## Description
 
@@ -185,7 +186,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+
 [1]: https://supermarket.getchef.com/cookbooks/mysql-hardening
-[2]: http://travis-ci.org/TelekomLabs/chef-mysql-hardening
-[3]: https://coveralls.io/r/TelekomLabs/chef-mysql-hardening
-[4]: https://gemnasium.com/TelekomLabs/chef-mysql-hardening
+[2]: http://travis-ci.org/hardening-io/chef-mysql-hardening
+[3]: https://coveralls.io/r/hardening-io/chef-mysql-hardening
+[4]: https://gemnasium.com/hardening-io/chef-mysql-hardening
+[5]: https://gitter.im/hardening-io
