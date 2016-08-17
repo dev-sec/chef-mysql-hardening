@@ -34,3 +34,6 @@ supports 'centos'
 supports 'fedora'
 supports 'debian'
 supports 'ubuntu'
+
+source_url 'https://github.com/dev-sec/chef-mysql-hardening'
+issues_url 'https://github.com/dev-sec/chef-mysql-hardening/issues'

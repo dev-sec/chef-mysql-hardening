@@ -130,7 +130,7 @@ bundle install
 bundle exec rake lint
 
 # Fetch tests
-bundle exec thor kitchen:fetch-remote-tests
+git clone https://github.com/dev-sec/tests-mysql-hardening test/integration
 
 # fast test on one machine
 bundle exec kitchen test default-ubuntu-1204
