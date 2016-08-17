@@ -3,7 +3,7 @@ driver:
   name: vagrant
 provisioner:
   name: chef_solo
-  require_chef_omnibus: 11.16.4
+  require_chef_omnibus: 12.5
   test_repo_uri: https://github.com/TelekomLabs/tests-mysql-hardening.git
 platforms:
 - name: ubuntu-12.04
@@ -49,4 +49,11 @@ platforms:
 suites:
 - name: default
   run_list:
-  - role[mysql]
+  - recipe[chef-solo-search]
+  - recipe[apt]
+  - recipe[mysql::server]
+  - recipe[mysql-hardening]
+  attributes:
+    mysql:
+      server_root_password: 'iloverandompasswordsbutthiswilldo'
+      server_debian_password: 'iloverandompasswordsbutthiswilldo'
