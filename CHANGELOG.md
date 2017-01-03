@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.2.1](https://github.com/dev-sec/chef-mysql-hardening/tree/v1.2.1) (2017-01-03)
+[Full Changelog](https://github.com/dev-sec/chef-mysql-hardening/compare/v1.2.0...v1.2.1)
+
+**Implemented enhancements:**
+
+- migrate to new inspec test suite [\#33](https://github.com/dev-sec/chef-mysql-hardening/pull/33) ([chris-rock](https://github.com/chris-rock))
+
 ## [v1.2.0](https://github.com/dev-sec/chef-mysql-hardening/tree/v1.2.0) (2016-08-18)
 [Full Changelog](https://github.com/dev-sec/chef-mysql-hardening/compare/v1.1.0...v1.2.0)
 

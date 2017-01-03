@@ -21,7 +21,7 @@ maintainer_email 'chris@lollyrock.com'
 license          'Apache v2.0'
 description      'Installs and configures a secure mysql server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '1.2.0'
+version          '1.2.1'
 
 depends 'mysql', '~>5.0'
 
