@@ -1,10 +1,9 @@
-# encoding: utf-8
 #
-# Cookbook Name:: mysql-hardening
+# Cookbook:: mysql-hardening
 # Attributes:: default
 #
-# Copyright 2014, Christoph Hartmann
-# Copyright 2014, Deutsche Telekom AG
+# Copyright:: 2014, Christoph Hartmann
+# Copyright:: 2014, Deutsche Telekom AG
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,11 +28,11 @@ default['mysql']['remove_test_database'] = true
 # path configuration
 default['mysql-hardening']['user'] = 'mysql'
 
-case platform_family
-when 'rhel', 'fedora'
-  default['mysql-hardening']['mysql-conf'] = '/etc/my.cnf'
-else
-  default['mysql-hardening']['mysql-conf'] = '/etc/mysql/my.cnf'
-end
+default['mysql-hardening']['mysql-conf'] = case platform_family
+                                           when 'rhel', 'fedora'
+                                             '/etc/my.cnf'
+                                           else
+                                             '/etc/mysql/my.cnf'
+                                           end
 
 default['mysql-hardening']['hardening-conf'] = '/etc/mysql/conf.d/hardening.cnf'
