@@ -19,7 +19,7 @@
 - update travis tests for chef 11 and chef 12 [\#27](https://github.com/dev-sec/chef-mysql-hardening/pull/27) ([chris-rock](https://github.com/chris-rock))
 - update common kitchen.yml platforms [\#26](https://github.com/dev-sec/chef-mysql-hardening/pull/26) ([arlimus](https://github.com/arlimus))
 - update common readme badges [\#25](https://github.com/dev-sec/chef-mysql-hardening/pull/25) ([arlimus](https://github.com/arlimus))
-- Typo Debain=\>Debian [\#24](https://github.com/dev-sec/chef-mysql-hardening/pull/24) ([sgrossberndt](https://github.com/sgrossberndt))
+- Typo Debian=\>Debian [\#24](https://github.com/dev-sec/chef-mysql-hardening/pull/24) ([sgrossberndt](https://github.com/sgrossberndt))
 - support version \> 5.2  and \< 6 [\#23](https://github.com/dev-sec/chef-mysql-hardening/pull/23) ([chris-rock](https://github.com/chris-rock))
 - updating common files [\#21](https://github.com/dev-sec/chef-mysql-hardening/pull/21) ([arlimus](https://github.com/arlimus))
 - add badges to readme [\#20](https://github.com/dev-sec/chef-mysql-hardening/pull/20) ([chris-rock](https://github.com/chris-rock))
@@ -35,7 +35,7 @@
 **Merged pull requests:**
 
 - Overlay [\#14](https://github.com/dev-sec/chef-mysql-hardening/pull/14) ([chris-rock](https://github.com/chris-rock))
-- Seperate server installation from hardening configuration [\#13](https://github.com/dev-sec/chef-mysql-hardening/pull/13) ([chris-rock](https://github.com/chris-rock))
+- Separate server installation from hardening configuration [\#13](https://github.com/dev-sec/chef-mysql-hardening/pull/13) ([chris-rock](https://github.com/chris-rock))
 
 ## [v1.0.0](https://github.com/dev-sec/chef-mysql-hardening/tree/v1.0.0) (2014-07-29)
 **Closed issues:**
