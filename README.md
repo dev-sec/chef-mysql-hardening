@@ -67,18 +67,17 @@ This hardening recipe installs the hardening but expects an existing installatio
 
 ## Security Options
 
-Further information is already available at [Deutsche Telekom (German)](http://www.telekom.com/static/-/155996/7/technische-sicherheitsanforderungen-si) and [Symantec](http://www.symantec.com/connect/articles/securing-mysql-step-step) 
+Further information is already available at [Deutsche Telekom (German)](https://web.archive.org/web/20140809063527/http://www.telekom.com/static/-/155996/7/technische-sicherheitsanforderungen-si) and [Symantec](http://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=e424fa89-758d-42ec-a272-a0c285d887ac&CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68) 
 
  * default['mysql']['security']['chroot'] - [chroot](http://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_chroot)
  * default['mysql']['security']['safe_user_create'] - [safe-user-create](http://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_safe-user-create)
- * default['mysql']['security']['secure_auth'] - [secure-auth](http://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_secure-auth)
- * default['mysql']['security']['skip_symbolic_links'] - [skip-symbolic-links](http://dev.mysql.com/doc/refman/5.7/en/server-
-    options.html#option_mysqld_symbolic-links)
- * default['mysql']['security']['skip_show_database'] - [skip-show-database](http://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_skip-show-database)
+ * default['mysql']['security']['secure_auth'] - [secure-auth](http://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_secure-auth)
+ * default['mysql']['security']['skip_symbolic_links'] - [skip-symbolic-links](http://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_symbolic-links)
+ * default['mysql']['security']['skip_show_database'] - [skip-show-database](http://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_skip-showh-database)
  * default['mysql']['security']['local_infile'] - [local-infile](http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_local_infile)
  * default['mysql']['security']['allow-suspicious-udfs'] - [allow-suspicious-udfs](https://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_allow-suspicious-udfs)
  * default['mysql']['security']['automatic_sp_privileges'] - [automatic_sp_privileges](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_automatic_sp_privileges)
- * default['mysql']['security']['secure-file-priv'] - [secure-file-priv](https://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_secure-file-priv)
+ * default['mysql']['security']['secure-file-priv'] - [secure-file-priv](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_secure_file_priv)
 
 ## Security Configuration
 
