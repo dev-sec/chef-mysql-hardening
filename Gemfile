@@ -12,7 +12,7 @@ group :test do
   gem 'foodcritic', '~> 16.0'
   gem 'minitest', '~> 5.5'
   gem 'rake'
-  gem 'rubocop', '~> 1.76.0'
+  gem 'rubocop', '~> 1.77.0'
   gem 'simplecov', '~> 0.10'
 end
 
