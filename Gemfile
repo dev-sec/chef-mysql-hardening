@@ -6,7 +6,7 @@ gem 'berkshelf', '~> 8.0'
 gem 'chef', '~> 18.0'
 
 group :test do
-  gem 'bundler', '~> 2.0'
+  gem 'bundler', '~> 4.0'
   gem 'chefspec',   '~> 9.3.0'
   gem 'coveralls',  require: false
   gem 'foodcritic', '~> 16.0'
