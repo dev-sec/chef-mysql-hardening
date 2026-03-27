@@ -1,10 +1,9 @@
-# encoding: utf-8
 #
-# Cookbook Name: mysql-hardening
+# Cookbook:: Name: mysql-hardening
 # Recipe: default
 #
-# Copyright 2014, Deutsche Telekom AG
-# Copyright 2016, Christoph Hartmann
+# Copyright:: 2014, Deutsche Telekom AG
+# Copyright:: 2016, Christoph Hartmann
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,4 +18,4 @@
 # limitations under the License.
 #
 
-include_recipe('mysql-hardening::hardening')
+include_recipe 'mysql-hardening::hardening'
