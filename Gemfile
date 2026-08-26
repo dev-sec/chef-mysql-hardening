@@ -27,7 +27,7 @@ end
 group :integration do
   gem 'concurrent-ruby', '~> 1.0'
   gem 'kitchen-dokken'
-  gem 'kitchen-inspec', '~> 2.0'
+  gem 'kitchen-inspec', '~> 3.0'
   gem 'kitchen-vagrant'
   gem 'test-kitchen', '~> 3.0'
 end
