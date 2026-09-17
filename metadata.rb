@@ -1,6 +1,5 @@
-# encoding: utf-8
 #
-# Copyright 2014, Deutsche Telekom AG
+# Copyright:: 2014, Deutsche Telekom AG
 #
 # Licensed under the Apache License, Version 2.0 (the 'License');
 # you may not use this file except in compliance with the License.
@@ -18,15 +17,11 @@
 name             'mysql-hardening'
 maintainer       'Christoph Hartmann'
 maintainer_email 'chris@lollyrock.com'
-license          'Apache v2.0'
+license          'Apache-2.0'
 description      'Installs and configures a secure mysql server'
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '1.2.1'
 
 depends 'mysql', '~>5.0'
-
-recipe 'mysql-hardening::default', 'installs a hardened mysql server'
-recipe 'mysql-hardening::server', 'installs a hardened mysql server'
 
 supports 'amazon'
 supports 'redhat'
